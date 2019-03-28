@@ -1,0 +1,12 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "add quotation",
+            "type": "shell",
+            "command": "ts-node scripts\\file\\add-quotation.ts",
+            "group": "build"
+        },
+
+    ]
+}
