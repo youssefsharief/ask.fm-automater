@@ -42,7 +42,6 @@ describe('captcha api service', () => {
 
     describe('user activity', () => {
         it('was active from 2 months ago should pass', () => {
-            // MockDate.set('02/20/2019');
             const user: IDbUserPureModel = {
                 userId: 'a',
                 status: 'contacted',
@@ -51,11 +50,9 @@ describe('captcha api service', () => {
             };
             const hashtagRateMap: HashtagRateMap = { 'a good hashtag': 7 };
             expect(domain.userSatisfiesCriteria(user, hashtagRateMap, question)).toBe(true);
-            // MockDate.reset();
         });
 
         it('was active from 5 months ago should not pass', () => {
-            // MockDate.set('02/20/2019');
             const user: IDbUserPureModel = {
                 userId: 'a',
                 status: 'contacted',
@@ -64,7 +61,6 @@ describe('captcha api service', () => {
             };
             const hashtagRateMap: HashtagRateMap = { 'a good hashtag': 7 };
             expect(domain.userSatisfiesCriteria(user, hashtagRateMap, question)).toBe(false);
-            // MockDate.reset();
         });
 
         it('should return false', () => {
